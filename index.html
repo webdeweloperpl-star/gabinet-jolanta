@@ -319,12 +319,20 @@ img { display: block; max-width: 100%; }
   opacity: 0;
   animation: fadeUp 0.7s ease-out 0.55s forwards;
 }
-.hero-img { flex: 1; height: 100%; }
+.hero-img { flex: 1; height: 100%; position: relative; }
 .hero-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 18%;
+}
+.hero-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(18,16,13,1) 0px, rgba(18,16,13,1) 15px, rgba(18,16,13,0.5) 50px, transparent 100px);
+  pointer-events: none;
 }
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }
@@ -779,7 +787,7 @@ img { display: block; max-width: 100%; }
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(18,16,13,0.95) 0%, rgba(18,16,13,0.88) 28%, rgba(18,16,13,0.62) 58%, rgba(18,16,13,0.18) 100%);
+    background: linear-gradient(to top, rgba(18,16,13,1) 0%, rgba(18,16,13,1) 22%, rgba(18,16,13,0.7) 45%, rgba(18,16,13,0.25) 70%, rgba(18,16,13,0.08) 100%);
   }
   .hero-text {
     position: absolute;
