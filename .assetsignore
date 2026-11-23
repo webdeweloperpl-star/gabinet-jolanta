@@ -1,0 +1,6 @@
+.git
+functions
+wrangler.jsonc
+.assetsignore
+*.zip
+favicon_io_extracted
